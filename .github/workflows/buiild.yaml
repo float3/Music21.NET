@@ -17,7 +17,6 @@ jobs:
       - name: Install dependencies
         run: |
           dotnet --version
-          dotnet tool install workflow
-          dotnet workflow restore
+          dotnet workload restore
           dotnet restore
           dotnet build
