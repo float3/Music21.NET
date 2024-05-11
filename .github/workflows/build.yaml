@@ -19,7 +19,7 @@ jobs:
           dotnet workload restore
           dotnet restore
           dotnet test || true
-          dotnet build --configuration Release
+          dotnet publish -c Release
 
       - name: upload artifact
         uses: actions/upload-artifact@v4

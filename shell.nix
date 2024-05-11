@@ -6,6 +6,7 @@ pkgs.mkShell {
     dotnet-runtime_8
     dotnet-aspnetcore_8
     msbuild
+    emscripten
   ];
 
   shellHook = ''
