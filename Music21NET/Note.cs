@@ -6,7 +6,8 @@ class NoteException(string message) : Exception(message);
 
 class NotRestException(string message) : Exception(message);
 
-enum SyllabicChoices {
+enum SyllabicChoices
+{
     Begin,
     Single,
     End,
@@ -14,7 +15,8 @@ enum SyllabicChoices {
     Composite
 }
 
-class Lyric {
+class Lyric
+{
     string Identifier { get; set; }
     int Number { get; set; }
     string Text { get; set; }
@@ -28,7 +30,8 @@ class Lyric {
         bool applyRaw = false,
         SyllabicChoices? syllabic = null,
         string identifier = null
-    ) {
+    )
+    {
         Identifier = identifier;
         Number = number;
         Text = text;
@@ -36,21 +39,25 @@ class Lyric {
         Components = null;
         ElisionBefore = " ";
 
-        if (!string.IsNullOrEmpty(text)) {
+        if (!string.IsNullOrEmpty(text))
+        {
             SetTextAndSyllabic(text, applyRaw);
         }
 
-        if (syllabic != null) {
+        if (syllabic != null)
+        {
             Syllabic = syllabic;
         }
     }
 
-    private void SetTextAndSyllabic(string text, bool applyRaw) {
+    private void SetTextAndSyllabic(string text, bool applyRaw)
+    {
         throw new NotImplementedException();
     }
 }
 
-public class GeneralNote {
+public class GeneralNote
+{
     protected bool isNote;
     protected bool isRest;
     protected bool isChord = false;
@@ -58,35 +65,43 @@ public class GeneralNote {
     Duration.Duration Duration { get; set; }
     string Lyric { get; set; }
 
-    protected GeneralNote(Duration.Duration duration = null, string lyric = null) {
+    protected GeneralNote(Duration.Duration duration = null, string lyric = null)
+    {
         Duration = duration;
         Lyric = lyric;
     }
 }
 
-public class NotRest : GeneralNote {
-    protected NotRest() {
+public class NotRest : GeneralNote
+{
+    protected NotRest()
+    {
         isNote = true;
         isRest = false;
     }
 }
 
-public class Note : NotRest {
+public class Note : NotRest
+{
     public Pitch.Pitch Pitch { get; set; }
 
-    public Note(string name) {
+    public Note(string name)
+    {
         throw new NotImplementedException();
     }
 
-    public Note(Pitch.Pitch? pitch = null, string? name = null, string? nameWithOctave = null) {
+    public Note(Pitch.Pitch? pitch = null, string? name = null, string? nameWithOctave = null)
+    {
         throw new NotImplementedException();
     }
 
-    public Note(int? pitch = null, string? name = null, string? nameWithOctave = null) {
+    public Note(int? pitch = null, string? name = null, string? nameWithOctave = null)
+    {
         throw new NotImplementedException();
     }
 
-    public Note(string? pitch = null, string? name = null, string? nameWithOctave = null) {
+    public Note(string? pitch = null, string? name = null, string? nameWithOctave = null)
+    {
         throw new NotImplementedException();
     }
 }

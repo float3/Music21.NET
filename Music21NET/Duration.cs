@@ -2,7 +2,8 @@ namespace Music21NET.Duration;
 
 using OffsetQLIn = Double;
 
-static class DurationConstants {
+static class DurationConstants
+{
     static Dictionary<string, double> typeToDuration = new Dictionary<string, double>
     {
         { "duplex-maxima", 64.0 },
@@ -70,7 +71,8 @@ static class DurationConstants {
 
 class DurationException(string message) : Exception(message);
 
-public class Duration {
+public class Duration
+{
     bool isGrace = false;
     string Type { get; set; }
     int Dots { get; set; }
@@ -95,14 +97,20 @@ public class Duration {
         OffsetQLIn quarterLength = 0,
         DurationTuple durationTuple = null,
         IEnumerable<DurationTuple> components = null
-        // Music21Object client = null
-    ) {
+    // Music21Object client = null
+    )
+    {
         // Check the type of typeOrDuration and assign it to the appropriate property
-        if (typeOrDuration is string) {
+        if (typeOrDuration is string)
+        {
             Type = (string)typeOrDuration;
-        } else if (typeOrDuration is OffsetQLIn) {
+        }
+        else if (typeOrDuration is OffsetQLIn)
+        {
             QuarterLength = (OffsetQLIn)typeOrDuration;
-        } else if (typeOrDuration is DurationTuple) {
+        }
+        else if (typeOrDuration is DurationTuple)
+        {
             DurationTuple = (DurationTuple)typeOrDuration;
         }
         Type = type;
@@ -114,22 +122,29 @@ public class Duration {
     }
 }
 
-class DurationTuple { //: NamedTuple {
+class DurationTuple
+{ //: NamedTuple {
     string Type { get; set; }
     int Dots { get; set; }
     OffsetQLIn QuarterLength { get; set; }
 
-    DurationTuple(string type, int dots, OffsetQLIn quarterLength) {
+    DurationTuple(string type, int dots, OffsetQLIn quarterLength)
+    {
         Type = type;
         Dots = dots;
         QuarterLength = quarterLength;
     }
 
-    int ordinal {
-        get {
-            try {
+    int ordinal
+    {
+        get
+        {
+            try
+            {
                 return DurationConstants.ordinalTypeFromNum.IndexOf(Type);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 throw new DurationException($"Could not determine durationNumber from {Type}");
             }
         }
