@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
         <Nullable>enable</Nullable>
         <RootNamespace>Music21NET</RootNamespace>
         <TargetFramework>net8.0</TargetFramework>
