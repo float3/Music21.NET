@@ -19,10 +19,10 @@ jobs:
           dotnet workload restore
           dotnet restore
           dotnet test || true
-          dotnet publish -c Release
+          dotnet build -c Release
 
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: wasm-artifact
-          path: Music21NET.WASM/bin/Release/net8.0/browser-wasm/
+          path: Music21NET.WASM/bin/Release/net8.0
