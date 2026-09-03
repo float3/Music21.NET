@@ -1,14 +1,18 @@
 {
-    "version": 1,
-    "isRoot": true,
-    "tools": {
-        "csharpier": {
-            "version": "0.28.2",
-            "commands": ["dotnet-csharpier"]
-        },
-        "dotnet-format": {
-            "version": "8.0.453106",
-            "commands": ["dotnet-format"]
-        }
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "csharpier": {
+      "version": "1.3.0",
+      "commands": [
+        "dotnet-csharpier"
+      ]
+    },
+    "dotnet-format": {
+      "version": "8.0.453106",
+      "commands": [
+        "dotnet-format"
+      ]
     }
+  }
 }
